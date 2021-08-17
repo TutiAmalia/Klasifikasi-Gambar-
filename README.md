@@ -1,1 +1,1 @@
-# Klasifikasi-Gambar-
+# Klasifikasi-Gambar-RockScissorPaper
