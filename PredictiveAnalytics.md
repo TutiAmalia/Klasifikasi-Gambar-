@@ -61,17 +61,23 @@ Kemudian visualisasi data untuk kolom dengan fitur non-numerik seperti pada gamb
 ![Destination_type](https://user-images.githubusercontent.com/44547435/136664795-f77f3a27-4292-41b4-832b-b038a42eafa7.png)
 
 Berikut Correlation Matrix:
+
 ![correlation_matrix](https://user-images.githubusercontent.com/44547435/136665130-7fa801d9-55a1-4811-b76b-15c262157198.png)
 
 ## Data Preparation
 Berdasarkan _Solution statements_, berikut merupakan penjelasan dari tahapan-tahapan dalam melakukan preprocessing data :
 
 -   Mengatasi data yang kosong atau missing value dengan nilai rata rata atau **_(mean substitution)_** dan mode kolom.
-![Uploading missing value.png…]()
+![missing value](https://user-images.githubusercontent.com/44547435/136665505-0975f191-6f5b-4308-a292-1c77ccc717a8.png)
 Dapat dilihat dari informaasi diatas bahwa terdapat beberapa variabel/kolom yang memiliki data null, dari kolom Type_of_Cab 15.35%, Customer_Since_Months 4.5%, Life_Style_Index 15.34%, Confidence_Life_Style_Index 15.34%, dan Var1 53,95%.
 Sehingga, untuk mengatasi data null maka dilakukan manipulasi data dengan mengisi data yang kosong dengan nilai rata-rata dan mode pada masing-masing kolom. Manipulasi data ini berguna agar data yang digunakan tidak kehilangan banyak informasi, dan model tetap dapat memperoleh informasi dari data yang ada pada kolom lainnya.
 
-
+- Oversampling data yang tidak seimbang
+- Encoding Fitur Kategori menggunakan teknik One Hot Encoding
+Terdapat 4 variabel kategori dalam dataset yakni `Type_of_Cab`,`Confidence_Life_Style_Index`,`Gender`, dan `Destination_Type`. Hal ini dilakukan untuk mengubah variabel kategori menjadi variabel numerik yang akan digunakan untuk pembuatan model.
+- Melakukan Train_Test_Split
+Sebelum membuat model, data akan dibagi menjadi dua bagian dengan rasio 80:20 di mana 80% untuk data latih dan 20% untuk data uji. 
+- Standarisasi nilai data pada ftur numerik dengan StandarScaler
 
 ## Modeling
 ## Evaluation
