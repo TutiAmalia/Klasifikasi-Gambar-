@@ -23,9 +23,9 @@ Informasi dataset dapat dilihat pada tabel dibawah ini :
 | Jenis dan Ukuran Berkas | CSV (7.68 MB)                                                                          |
 
 sigma_cabs.csv merupakan dataset yang digunakan pada proses analisis prediksi lonjakan harga pada layanan taksi. Dataset ini berisi 131662 baris dan 14 kolom di mana tiap kolom memuat informasi tipe data yakni: terdapat 5 buah data numerik (tipe data float64), int64(4), object(5)
-- Terdapat 5 kolom dengan tipe object, yaitu: Trip_ID , Type_of_Cab, Confidence_Life_Style_Index, Destination_Type dan Gender. Kolom ini merupakan categorical features (fitur non-numerik).
-- Terdapat 5 kolom numerik dengan tipe data float64 yaitu: Trip_Distance, Customer_Since_Months, Life_Style_Index, Customer_Rating, dan Var1.
-- Terdapat 4 kolom numerik dengan tipe data int64, yaitu: Cancellation_Last_1Month, Var2, Var3, dan Surge_Pricing_Type. Kolom Surge_Pricing_Type merupakan target fitur yang akan digunakan.
+- Terdapat 5 kolom dengan tipe object, yaitu: `Trip_ID` , `Type_of_Cab`, `Confidence_Life_Style_Index`, `Destination_Type`, dan `Gender`. Kolom ini merupakan categorical features (fitur non-numerik).
+- Terdapat 5 kolom numerik dengan tipe data float64 yaitu: `Trip_Distance`, `Customer_Since_Months`, `Life_Style_Index`, `Customer_Rating`, dan `Var1`.
+- Terdapat 4 kolom numerik dengan tipe data int64, yaitu: `Cancellation_Last_1Month`, `Var2`, `Var3`, dan `Surge_Pricing_Type`. Kolom `Surge_Pricing_Type` merupakan target fitur yang akan digunakan.
 Namun, terdapat juga data yang kossong (missing value) diantaranya pada variabel `Type_of_Cab`, `Customer_Since_Months`, `Life_Style_Index`, `Confidence_Life_Style_Index`, dan `Var1`
 
 Berikut penjelasan mengenai variabel yang terdapat pada dataset:
@@ -41,7 +41,24 @@ Berikut penjelasan mengenai variabel yang terdapat pada dataset:
 10. `Var1`, `Var2`, dan `Var3` : Variabel kontinu yang ditutupi oleh perusahaan. Dapat digunakan untuk tujuan pemodelan
 11. `Gender` : Jenis kelamin pelanggan
 12. `SurgePricingType` : Target (terdapat 3 jenis harga lonjakan penggunaan layanan taxi)
-	
+
+Kemudian terdapat juga visualisasi data untuk kolom dengan fitur numerik seperti pada gambar dibawah ini :
+![Trip_Distance](https://user-images.githubusercontent.com/44547435/136664699-e92637c4-835a-43c6-9fda-2e694bfad1f7.png)
+![customer_since_month](https://user-images.githubusercontent.com/44547435/136664961-8c43e525-9b11-4451-9693-fdcbd41c63dd.png)
+![life_style_index](https://user-images.githubusercontent.com/44547435/136664714-20e7e4d7-7a87-4b96-a517-b2435c7c04db.png)
+![customer_rating](https://user-images.githubusercontent.com/44547435/136664732-fd8b28a4-b5df-4a8f-8c2a-1f148f8150f3.png)
+![cancellation_last_1month](https://user-images.githubusercontent.com/44547435/136664740-0eae4522-60b2-461d-a741-bd050cc01828.png)
+![var1](https://user-images.githubusercontent.com/44547435/136664745-63674487-1e26-4b42-88ae-df51276df5df.png)
+![var2](https://user-images.githubusercontent.com/44547435/136664750-32b60fb0-ee97-4327-88f9-195c2707244a.png)
+![var3](https://user-images.githubusercontent.com/44547435/136664758-334cfa11-2824-4e63-8cab-ea9a379f1006.png)
+![surge_pricing_type](https://user-images.githubusercontent.com/44547435/136664767-b33951dd-edb3-4aa3-af30-131e0ce531dd.png)
+
+Kemudian visualisasi data untuk kolom dengan fitur non-numerik seperti pada gambar dibawah ini :
+![type_of_Cab](https://user-images.githubusercontent.com/44547435/136664773-8dee0c6b-3412-4716-9477-45054caa8d6a.png)
+![Confidence_life_style_index](https://user-images.githubusercontent.com/44547435/136664782-ed42fec5-eae2-4109-8eb6-07ace461e2b0.png)
+![gender](https://user-images.githubusercontent.com/44547435/136664793-290505c2-62aa-41d6-8c7d-628ec3a61f64.png)
+![Destination_type](https://user-images.githubusercontent.com/44547435/136664795-f77f3a27-4292-41b4-832b-b038a42eafa7.png)
+
 ## Data Preparation
 ## Modeling
 ## Evaluation
