@@ -52,6 +52,7 @@ Kemudian terdapat juga visualisasi data untuk kolom dengan fitur numerik seperti
 ![var2](https://user-images.githubusercontent.com/44547435/136664750-32b60fb0-ee97-4327-88f9-195c2707244a.png)
 ![var3](https://user-images.githubusercontent.com/44547435/136664758-334cfa11-2824-4e63-8cab-ea9a379f1006.png)
 ![surge_pricing_type](https://user-images.githubusercontent.com/44547435/136664767-b33951dd-edb3-4aa3-af30-131e0ce531dd.png)
+![surge_pricing_type1](https://user-images.githubusercontent.com/44547435/136665011-993da1f3-09f7-4fac-bc16-ef3690fef175.png)
 
 Kemudian visualisasi data untuk kolom dengan fitur non-numerik seperti pada gambar dibawah ini :
 ![type_of_Cab](https://user-images.githubusercontent.com/44547435/136664773-8dee0c6b-3412-4716-9477-45054caa8d6a.png)
@@ -59,6 +60,18 @@ Kemudian visualisasi data untuk kolom dengan fitur non-numerik seperti pada gamb
 ![gender](https://user-images.githubusercontent.com/44547435/136664793-290505c2-62aa-41d6-8c7d-628ec3a61f64.png)
 ![Destination_type](https://user-images.githubusercontent.com/44547435/136664795-f77f3a27-4292-41b4-832b-b038a42eafa7.png)
 
+Berikut Correlation Matrix:
+![correlation_matrix](https://user-images.githubusercontent.com/44547435/136665130-7fa801d9-55a1-4811-b76b-15c262157198.png)
+
 ## Data Preparation
+Berdasarkan _Solution statements_, berikut merupakan penjelasan dari tahapan-tahapan dalam melakukan preprocessing data :
+
+-   Mengatasi data yang kosong atau missing value dengan nilai rata rata atau **_(mean substitution)_** dan mode kolom.
+![Uploading missing value.png…]()
+Dapat dilihat dari informaasi diatas bahwa terdapat beberapa variabel/kolom yang memiliki data null, dari kolom Type_of_Cab 15.35%, Customer_Since_Months 4.5%, Life_Style_Index 15.34%, Confidence_Life_Style_Index 15.34%, dan Var1 53,95%.
+Sehingga, untuk mengatasi data null maka dilakukan manipulasi data dengan mengisi data yang kosong dengan nilai rata-rata dan mode pada masing-masing kolom. Manipulasi data ini berguna agar data yang digunakan tidak kehilangan banyak informasi, dan model tetap dapat memperoleh informasi dari data yang ada pada kolom lainnya.
+
+
+
 ## Modeling
 ## Evaluation
