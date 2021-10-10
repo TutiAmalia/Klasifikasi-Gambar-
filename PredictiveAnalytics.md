@@ -93,37 +93,38 @@ Berikut Correlation Matrix:
 Berdasarkan _Solution statements_, berikut merupakan penjelasan dari tahapan-tahapan dalam melakukan _preprocessing_ data :
 
 -   Mengatasi data yang kosong atau missing value dengan nilai rata-rata dan mode kolom.
+
 ![missing value](https://user-images.githubusercontent.com/44547435/136665505-0975f191-6f5b-4308-a292-1c77ccc717a8.png)
 
-Dapat dilihat dari informaasi diatas bahwa terdapat beberapa variabel/kolom yang memiliki data null, dari kolom Type_of_Cab 15.35%, Customer_Since_Months 4.5%, Life_Style_Index 15.34%, Confidence_Life_Style_Index 15.34%, dan Var1 53,95%.
+Dapat dilihat dari informaasi diatas bahwa terdapat beberapa variabel/kolom yang memiliki data null, dari kolom `Type_of_Cab` 15.35%, `Customer_Since_Months` 4.5%, `Life_Style_Index` 15.34%, `Confidence_Life_Style_Index` 15.34%, dan `Var1` 53,95%.
 Sehingga, untuk mengatasi data null maka dilakukan manipulasi data dengan mengisi data yang kosong dengan nilai rata-rata dan mode pada masing-masing kolom. Manipulasi data ini berguna agar data yang digunakan tidak kehilangan banyak informasi, dan model tetap dapat memperoleh informasi dari data yang ada pada kolom lainnya.
 
 - Encoding Fitur Kategori menggunakan One Hot Encoding
 
-Terdapat 4 variabel kategori dalam dataset yakni `Type_of_Cab`,`Confidence_Life_Style_Index`,`Gender`, dan `Destination_Type`. Metode One Hot Encoding merepresentasikan data bertipe kategori sebagai vektor biner yang bernilai integer, 0 dan 1, dimana semua elemen akan bernilai 0 kecuali satu elemen yang bernilai 1, yaitu elemen yang memiliki nilai kategori tersebut.
+  Terdapat 4 variabel kategori dalam dataset yakni `Type_of_Cab`,`Confidence_Life_Style_Index`,`Gender`, dan `Destination_Type`. Metode One Hot Encoding merepresentasikan data bertipe kategori sebagai vektor biner yang bernilai integer, 0 dan 1, dimana semua elemen akan bernilai 0 kecuali satu elemen yang bernilai 1, yaitu elemen yang memiliki nilai kategori tersebut.
 
 - Melakukan pembagian dataset dengan Train/test split
 
-Train/test split digunakan untuk mengevaluasi performa model yang nanti akan digunakan. Proses ini membagi dataset menjadi dua bagian yakni bagian yang digunakan untuk training data dan untuk testing data dengan proporsi 80:20.
+  Train/test split digunakan untuk mengevaluasi performa model yang nanti akan digunakan. Proses ini membagi dataset menjadi dua bagian yakni bagian yang digunakan untuk data _training_ dan untuk data _testing_ dengan proporsi 80:20.
 
 - Standarisasi nilai data pada semua fitur dengan StandarScaler
 
-StandardScaler menghilangkan mean (terpusat pada 0) dan menskalakan ke variansi (deviasi standar = 1), dengan asumsi data terdistribusi normal (gauss) untuk semua fitur.
+  Standarisasi adalah proses konversi nilai-nilai dari suatu fitur sehingga nilai-nilai tersebut memiliki skala yang sama. Metode StandardScaler menghilangkan _mean_ (terpusat pada 0) dan menskalakan ke variansi (deviasi standar = 1), dengan asumsi data terdistribusi normal (gauss) untuk semua fitur.
 
-## Modeling
+## Modelling
 Selanjutnya pada tahap modelling akan membandingkan 2 metode klasifikasi yakni Random Forest dan LGBM. 
 
 - Random Forest
 
-Pada proses ini menggunakan modul scikit-learn yakni [RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html).
+  Pada proses ini menggunakan modul scikit-learn yakni [RandomForestClassifier](https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html).
 - LGBM
 
-Modul yang digunakan yakni [LGBM](https://lightgbm.readthedocs.io/en/latest/pythonapi/lightgbm.LGBMClassifier.html)
+  Modul yang digunakan yakni [LGBM](https://lightgbm.readthedocs.io/en/latest/pythonapi/lightgbm.LGBMClassifier.html)
 
 Hasilnya dapat dilihat dibawah ini:
 ![modelling](https://user-images.githubusercontent.com/44547435/136684872-e728cd6e-a795-491d-95fc-56d4f4adb498.png)
 
-Pada model yang digunakan, dapat diketahui bahwa hasil akurasi dari model Random Forest dan LGBM hampir mendekati pada masing-masing nilai akurasi sebesar 68.5% dan 69.4%. Dapat dikatakan bahwa nilai akurasi dari kedua model masih kurang bagus, baik dari nilai f1-score, precision, dan recall. Untuk melihat performa dari kedua model dengan mencoba memakai data uji/testing dan divisualisasikan pada confussion matrix sebagai berikut:
+Pada model yang digunakan, dapat diketahui bahwa hasil akurasi dari model Random Forest dan LGBM hampir mendekati pada masing-masing nilai akurasi sebesar 68.5% dan 69.4%. Dapat dikatakan bahwa nilai _accuracy_ dari kedua model masih kurang bagus, baik dari nilai _f1-score_, _precision_, dan _recall_. Untuk melihat performa dari kedua model dengan mencoba memakai data uji/testing dan divisualisasikan pada confussion matrix sebagai berikut:
 - Random Forest
 
 ![RF](https://user-images.githubusercontent.com/44547435/136685205-ac60d504-a831-4d46-a5c1-89dfcd6d7253.png)
@@ -132,29 +133,29 @@ Pada model yang digunakan, dapat diketahui bahwa hasil akurasi dari model Random
 ![LGBM](https://user-images.githubusercontent.com/44547435/136685214-9e94aeec-55ac-44ba-8bb1-76a3a4f3485e.png)
 
 ## Evaluation
-Pada tahapan terakhir ini, model yang dibuat merupakan kasus klasifikasi dan menggunakan metriks akuras, f1-score, precission, dan recall. Berikut tampilan hasil dari pengukuran model LGBM.
+Pada tahapan terakhir ini, model yang dibuat merupakan kasus klasifikasi dan menggunakan metriks _accuracy_, _f1-score_, _precission_, dan _recall_. Berikut tampilan hasil dari pengukuran model LGBM.
 
 ![evaluation](https://user-images.githubusercontent.com/44547435/136685305-bcb8777f-3f7d-4b2e-a8e7-f15bf5b37b3f.png)
 
 Penjelasan metriks yang digunakan:
 - Accuracy
 
-Accuracy menggambarkan seberapa akurat model dapat mengklasifikasikan dengan benar. Maka, accuracy meruapakan rasio prediksi benar (positif dan negatif) dengan keseluruhan data. Dengan kata lain, accuracy merupakan tingkat kedekatan nilai prediksi dengan nilai aktual (sebenarnya). Persamaan nilai accuracy:
+  Accuracy menggambarkan seberapa akurat model dapat mengklasifikasikan dengan benar. Maka, _accuracy_ meruapakan rasio prediksi benar (positif dan negatif) dengan keseluruhan data. Dengan kata lain, _accuracy_ merupakan tingkat kedekatan nilai prediksi dengan nilai aktual (sebenarnya). Persamaan nilai _accuracy_:
 ![accuracy](https://user-images.githubusercontent.com/44547435/136685509-4d16e16b-56ab-4dfd-8102-ba6366ff93a1.png)
 
 - Precision
 
-Precision menggambarkan tingkat keakuratan antara data yang diminta dengan hasil prediksi yang diberikan oleh model. Maka, precision merupakan rasio prediksi benar positif dibandingkan dengan keseluruhan hasil yang diprediksi positif. Persamaan nilai precision:
+  Precision menggambarkan tingkat keakuratan antara data yang diminta dengan hasil prediksi yang diberikan oleh model. Maka, _precision_ merupakan rasio prediksi benar positif dibandingkan dengan keseluruhan hasil yang diprediksi positif. Persamaan nilai _precision_:
 ![precision](https://user-images.githubusercontent.com/44547435/136685565-88449317-8d35-47a5-ae04-74aa9059c384.png)
 
 - Recall
 
-Recall menggambarkan keberhasilan model dalam menemukan kembali sebuah informasi. Maka, recall merupakan rasio prediksi benar positif dibandingkan dengan keseluruhan data yang benar positif. Persamaan nilai recall:
+  Recall menggambarkan keberhasilan model dalam menemukan kembali sebuah informasi. Maka, _recall_ merupakan rasio prediksi benar positif dibandingkan dengan keseluruhan data yang benar positif. Persamaan nilai _recall_:
 ![recall](https://user-images.githubusercontent.com/44547435/136685641-273c2972-13cd-438a-bd72-bacd38da6f88.png)
 
 - f1-score
 
-f1-Score menggambarkan perbandingan rata-rata precision dan recall yang dibobotkan. Accuracy tepat kita gunakan sebagai acuan performansi algoritma jika dataset kita memiliki jumlah data False Negatif dan False Positif yang sangat mendekati (symmetric). Namun jika jumlahnya tidak mendekati, maka sebaiknya kita menggunakan f1-scor sebagai acuan. Persamaan nilai f1-score:
+  f1-Score menggambarkan perbandingan rata-rata _precision_ dan _recall_ yang dibobotkan. Accuracy tepat kita gunakan sebagai acuan performansi algoritma jika dataset kita memiliki jumlah data false negatif dan false positif yang sangat mendekati (symmetric). Namun jika jumlahnya tidak mendekati, maka sebaiknya kita menggunakan f1-score sebagai acuan. Persamaan nilai _f1-score_:
 
 ![f1-score](https://user-images.githubusercontent.com/44547435/136685760-415e5a0f-e2a5-4e35-90cb-4789bff771c7.png)
 
