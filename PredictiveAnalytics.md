@@ -1,15 +1,40 @@
 # Laporan Proyek Machine Learning - Tuti Amalia
 
 ## Domain Proyek
-
+Domain proyek yang dipilih dalam proyek machine learning yakni bisnis dengan judul proyek "Prediksi Jenis Lonjakan Biaya pada Jasa Pelayanan Taksi di India"
 -   Latar Belakang
-Layanan agregator taksi populer saat ini dan pengguna dapat mengunduh aplikasi mereka di ponsel cerdas dan memesan taksi dari mana saja di kota tempat mereka beroperasi. Aplikasi ini akan mencari taksi dari berbagai penyedia layanan dan memberikan opsi terbaik kepada klien mereka di seluruh opsi yang tersedia. Proyek ini bertujuan untuk membangun model prediktif untuk membantu menentukan jenis harga lonjakan untuk setiap perjalanan berdasarkan karakteristiknya. Ini dapat membantu mengalokasikan sumber daya secara efektif dan meningkatkan efisiensi transportasi.
+Layanan agregator taksi populer saat ini dan pengguna dapat mengunduh aplikasi mereka di ponsel cerdas/smartphone dan memesan taksi dari mana saja di kota tempat mereka beroperasi. Aplikasi ini akan mencari taksi dari berbagai penyedia layanan dan memberikan opsi terbaik kepada klien mereka di seluruh opsi yang tersedia. Proyek ini bertujuan untuk membangun model prediktif untuk membantu menentukan jenis lonjakan biaya untuk setiap perjalanan berdasarkan karakteristiknya. Ini dapat membantu mengalokasikan sumber daya secara efektif dan meningkatkan efisiensi transportasi.
 
 ## Business Understanding
 ### Problem Statements
-### Goals
-### Solution statements
+Berikut merupakan rincian masalah yang dapat diselesaikan pada proyek ini:
+- Bagaimana teknik preprocessing agar dapat digunakan untuk membuat model yang baik?
+- Bagaimana cara membuat model machine learning untuk mengklasifikasi jenis lonjakan biaya pada jasa pelayanan taksi?
 
+### Goals
+Berikut adalah tujuan dari dibuatnya proyek ini:
+- Melakukan teknik preprocessing agar dapat digunakan untuk membuat model yang baik
+- Membuat model machine learning untuk mengklasifikasi jenis lonjakan biaya pada jasa pelayanan taksi.
+
+### Solution statements
+Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya:
+- Untuk preprocessing data dapat dilakukan dengan beberapa teknik, sebagai berikut:
+  - Mengatasi data yang kosong atau missing value dengan nilai rata-rata dan mode kolom.
+  - Encoding Fitur Kategori menggunakan One Hot Encoding
+  - Melakukan pembagian dataset dengan Train/test split
+  - Standarisasi nilai data pada semua fitur dengan StandarScaler
+- Untuk pembuatan model dipilih dengan menggunakan model klasifikasi dengan algoritma Random Forest dan LightGBM. Berikut penjelasan dari kedua model yang akan digunakan:
+  - Random Forest 
+    Metode Random Forst merupakan salah satu metode dalam Decision Tree. Random Forest adalah kombinasi dari masing-masing tree yang baik kemudian dikombinasikan ke dalam satu model. Random Forest bergantung pada sebuah nilai vector random dengan distribusi yang sama pada semua pohon yang masing-masing decision tree memiliki kedalaman yang maksimal. Random forest adalah classifier yang terdiri dari classifier yang berbentuk pohon {h(**x**, θ k), k = 1, ...} dimana θk adalah random vector yang didistribusikan secara independen dan masing-masing tree pada sebuah unit akan memilih class yang paling populer pada input x [[1](https://machinelearning.mipa.ugm.ac.id/2018/07/28/random-forest/)]. 
+    Kelebihan dari algoritma Random Forest yakni mengatasi noise dan missing value serta dapat mengatasi data dalam jumlah yang besar. Adapun kekurangannya yakni interpretasi yang sulit dan membutuhkan tuning model yang tepat untuk data.
+    
+  - LightGBM
+    LightGBM (Light Gradient Boosting Machine) adalah algoritma berbasi histogram yang menempatkan nilai kontinu ke dalam tong diskrit, yang mengarah pada pelatihan yang lebih cepat dan penggunaan memori yang lebih efisien [[2](https://zephyrnet.com/id/lightgbm-a-highly-efficient-gradient-boosting-decision-tree/)].
+    Kelebihan dari LGBM yakni:
+    - Kecepatan pelatihan lebih cepat dan efisiensi lebih tinggi
+    - Penggunaan memori lebih rendah
+    - Mampu menangani data skala besar
+    
 ## Data Understanding
 ![1](https://user-images.githubusercontent.com/44547435/136661921-11a5d21a-afa1-4d8a-85ff-8259fd858042.png)
 Informasi dataset dapat dilihat pada tabel dibawah ini :
@@ -67,7 +92,7 @@ Berikut Correlation Matrix:
 ## Data Preparation
 Berdasarkan _Solution statements_, berikut merupakan penjelasan dari tahapan-tahapan dalam melakukan preprocessing data :
 
--   Mengatasi data yang kosong atau missing value dengan nilai rata rata atau **_(mean substitution)_** dan mode kolom.
+-   Mengatasi data yang kosong atau missing value dengan nilai rata-rata dan mode kolom.
 ![missing value](https://user-images.githubusercontent.com/44547435/136665505-0975f191-6f5b-4308-a292-1c77ccc717a8.png)
 
 Dapat dilihat dari informaasi diatas bahwa terdapat beberapa variabel/kolom yang memiliki data null, dari kolom Type_of_Cab 15.35%, Customer_Since_Months 4.5%, Life_Style_Index 15.34%, Confidence_Life_Style_Index 15.34%, dan Var1 53,95%.
@@ -77,7 +102,7 @@ Sehingga, untuk mengatasi data null maka dilakukan manipulasi data dengan mengis
 
 Terdapat 4 variabel kategori dalam dataset yakni `Type_of_Cab`,`Confidence_Life_Style_Index`,`Gender`, dan `Destination_Type`. Metode One Hot Encoding merepresentasikan data bertipe kategori sebagai vektor biner yang bernilai integer, 0 dan 1, dimana semua elemen akan bernilai 0 kecuali satu elemen yang bernilai 1, yaitu elemen yang memiliki nilai kategori tersebut.
 
-- Melakukan Train_Test_Split
+- Melakukan pembagian dataset dengan Train/test split
 
 Train/test split digunakan untuk mengevaluasi performa model yang nanti akan digunakan. Proses ini membagi dataset menjadi dua bagian yakni bagian yang digunakan untuk training data dan untuk testing data dengan proporsi 80:20.
 
@@ -133,3 +158,8 @@ f1-Score menggambarkan perbandingan rata-rata precision dan recall yang dibobotk
 
 ![f1-score](https://user-images.githubusercontent.com/44547435/136685760-415e5a0f-e2a5-4e35-90cb-4789bff771c7.png)
 
+## _Referensi:_
+
+[[1](https://machinelearning.mipa.ugm.ac.id/2018/07/28/random-forest/)] Yanuar, A. 2018. Random Forest. Artikel. https://machinelearning.mipa.ugm.ac.id/2018/07/28/random-forest/
+
+[[2](https://zephyrnet.com/id/lightgbm-a-highly-efficient-gradient-boosting-decision-tree/)] Plato. 2020. LightGBM: Pohon Keputusan Meningkatkan Gradien yang Sangat Efisien. https://zephyrnet.com/id/lightgbm-a-highly-efficient-gradient-boosting-decision-tree/
