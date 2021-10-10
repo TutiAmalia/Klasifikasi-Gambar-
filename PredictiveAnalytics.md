@@ -3,6 +3,7 @@
 ## Domain Proyek
 Domain proyek yang dipilih dalam proyek machine learning yakni bisnis dengan judul proyek "Prediksi Jenis Lonjakan Biaya pada Jasa Pelayanan Taksi di India"
 -   Latar Belakang
+
     Layanan agregator taksi menjadi populer saat ini dan pengguna dapat mengunduh aplikasi mereka di ponsel cerdas/_smartphone_ dan memesan taksi dari mana saja di kota tempat mereka beroperasi. Aplikasi ini akan mencari taksi dari berbagai penyedia layanan dan memberikan opsi terbaik kepada klien mereka di seluruh opsi yang tersedia. Salah satu layanan agregator taksi India, yakni **Sigma Cabs**. Mereka beroperasi selama beberapa tahun. Selama periode ini, mereka telah menangkap jenis harga lonjakan dari penyedia layanan. Sehingga, pada proyek ini perlu dilakukan untuk membangun model prediktif yang dapat membantu menentukan jenis lonjakan biaya untuk setiap perjalanan berdasarkan karakteristiknya. Ini dapat membantu mengalokasikan sumber daya secara efektif dan meningkatkan efisiensi transportasi.
 
 ## Business Understanding
