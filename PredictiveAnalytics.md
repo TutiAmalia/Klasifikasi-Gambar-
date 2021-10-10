@@ -3,30 +3,30 @@
 ## Domain Proyek
 Domain proyek yang dipilih dalam proyek machine learning yakni bisnis dengan judul proyek "Prediksi Jenis Lonjakan Biaya pada Jasa Pelayanan Taksi di India"
 -   Latar Belakang
-Layanan agregator taksi populer saat ini dan pengguna dapat mengunduh aplikasi mereka di ponsel cerdas/smartphone dan memesan taksi dari mana saja di kota tempat mereka beroperasi. Aplikasi ini akan mencari taksi dari berbagai penyedia layanan dan memberikan opsi terbaik kepada klien mereka di seluruh opsi yang tersedia. Proyek ini bertujuan untuk membangun model prediktif untuk membantu menentukan jenis lonjakan biaya untuk setiap perjalanan berdasarkan karakteristiknya. Ini dapat membantu mengalokasikan sumber daya secara efektif dan meningkatkan efisiensi transportasi.
+    Layanan agregator taksi menjadi populer saat ini dan pengguna dapat mengunduh aplikasi mereka di ponsel cerdas/_smartphone_ dan memesan taksi dari mana saja di kota tempat mereka beroperasi. Aplikasi ini akan mencari taksi dari berbagai penyedia layanan dan memberikan opsi terbaik kepada klien mereka di seluruh opsi yang tersedia. Salah satu layanan agregator taksi India, yakni **Sigma Cabs**. Mereka beroperasi selama beberapa tahun. Selama periode ini, mereka telah menangkap jenis harga lonjakan dari penyedia layanan. Sehingga, pada proyek ini perlu dilakukan untuk membangun model prediktif yang dapat membantu menentukan jenis lonjakan biaya untuk setiap perjalanan berdasarkan karakteristiknya. Ini dapat membantu mengalokasikan sumber daya secara efektif dan meningkatkan efisiensi transportasi.
 
 ## Business Understanding
 ### Problem Statements
 Berikut merupakan rincian masalah yang dapat diselesaikan pada proyek ini:
-- Bagaimana teknik preprocessing agar dapat digunakan untuk membuat model yang baik?
-- Bagaimana cara membuat model machine learning untuk mengklasifikasi jenis lonjakan biaya pada jasa pelayanan taksi?
+- Bagaimana teknik _preprocessing_ agar data dapat digunakan untuk membuat model yang baik?
+- Bagaimana cara membuat model _machine learning_ untuk mengklasifikasi jenis lonjakan biaya pada jasa pelayanan taksi?
 
 ### Goals
 Berikut adalah tujuan dari dibuatnya proyek ini:
-- Melakukan teknik preprocessing agar dapat digunakan untuk membuat model yang baik
-- Membuat model machine learning untuk mengklasifikasi jenis lonjakan biaya pada jasa pelayanan taksi.
+- Melakukan teknik _preprocessing_ agar data dapat digunakan untuk membuat model yang baik
+- Membuat model _machine learning_ untuk mengklasifikasi jenis lonjakan biaya pada jasa pelayanan taksi.
 
 ### Solution statements
 Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya:
 - Untuk preprocessing data dapat dilakukan dengan beberapa teknik, sebagai berikut:
-  - Mengatasi data yang kosong atau missing value dengan nilai rata-rata dan mode kolom.
-  - Encoding Fitur Kategori menggunakan One Hot Encoding
-  - Melakukan pembagian dataset dengan Train/test split
-  - Standarisasi nilai data pada semua fitur dengan StandarScaler
+  - Mengatasi data yang kosong atau _missing value_ dengan nilai rata-rata dan mode kolom.
+  - Encoding Fitur Kategori menggunakan **One Hot Encoding**
+  - Melakukan pembagian dataset dengan **Train/test split**
+  - Standarisasi nilai data pada semua fitur dengan **StandarScaler**
 - Untuk pembuatan model dipilih dengan menggunakan model klasifikasi dengan algoritma Random Forest dan LightGBM. Berikut penjelasan dari kedua model yang akan digunakan:
   - Random Forest 
-    Metode Random Forst merupakan salah satu metode dalam Decision Tree. Random Forest adalah kombinasi dari masing-masing tree yang baik kemudian dikombinasikan ke dalam satu model. Random Forest bergantung pada sebuah nilai vector random dengan distribusi yang sama pada semua pohon yang masing-masing decision tree memiliki kedalaman yang maksimal. Random forest adalah classifier yang terdiri dari classifier yang berbentuk pohon {h(**x**, θ k), k = 1, ...} dimana θk adalah random vector yang didistribusikan secara independen dan masing-masing tree pada sebuah unit akan memilih class yang paling populer pada input x [[1](https://machinelearning.mipa.ugm.ac.id/2018/07/28/random-forest/)]. 
-    Kelebihan dari algoritma Random Forest yakni mengatasi noise dan missing value serta dapat mengatasi data dalam jumlah yang besar. Adapun kekurangannya yakni interpretasi yang sulit dan membutuhkan tuning model yang tepat untuk data.
+    Metode Random Forst merupakan salah satu metode dalam _Decision Tree_. Random Forest adalah kombinasi dari masing-masing _tree_ yang baik kemudian dikombinasikan ke dalam satu model. Random Forest bergantung pada sebuah nilai _vector random_ dengan distribusi yang sama pada semua pohon yang masing-masing _decision tree_ memiliki kedalaman yang maksimal. Random forest adalah _classifier_ yang terdiri dari _classifier_ yang berbentuk pohon {h(**x**, θ k), k = 1, ...} dimana θk adalah _random vector_ yang didistribusikan secara independen dan masing-masing _tree_ pada sebuah unit akan memilih _class_ yang paling populer pada input x [[1](https://machinelearning.mipa.ugm.ac.id/2018/07/28/random-forest/)]. 
+    Kelebihan dari algoritma Random Forest yakni mengatasi _noise_ dan _missing value_ serta dapat mengatasi data dalam jumlah yang besar. Adapun kekurangannya yakni interpretasi yang sulit dan membutuhkan tuning model yang tepat untuk data.
     
   - LightGBM
     LightGBM (Light Gradient Boosting Machine) adalah algoritma berbasi histogram yang menempatkan nilai kontinu ke dalam tong diskrit, yang mengarah pada pelatihan yang lebih cepat dan penggunaan memori yang lebih efisien [[2](https://zephyrnet.com/id/lightgbm-a-highly-efficient-gradient-boosting-decision-tree/)].
@@ -47,11 +47,11 @@ Informasi dataset dapat dilihat pada tabel dibawah ini :
 | Rating Penggunaan       | 9.7 (Bronze)                                                                             |
 | Jenis dan Ukuran Berkas | CSV (7.68 MB)                                                                          |
 
-sigma_cabs.csv merupakan dataset yang digunakan pada proses analisis prediksi lonjakan harga pada layanan taksi. Dataset ini berisi 131662 baris dan 14 kolom di mana tiap kolom memuat informasi tipe data yakni: terdapat 5 buah data numerik (tipe data float64), int64(4), object(5)
-- Terdapat 5 kolom dengan tipe object, yaitu: `Trip_ID` , `Type_of_Cab`, `Confidence_Life_Style_Index`, `Destination_Type`, dan `Gender`. Kolom ini merupakan categorical features (fitur non-numerik).
+sigma_cabs.csv merupakan dataset yang digunakan pada proses analisis prediksi lonjakan harga pada layanan taksi. Dataset ini berisi 131662 baris dan 14 kolom di mana tiap kolom memuat informasi tipe data yakni: 
+- Terdapat 5 kolom dengan tipe object, yaitu: `Trip_ID` , `Type_of_Cab`, `Confidence_Life_Style_Index`, `Destination_Type`, dan `Gender`. Kolom ini merupakan _categorical features_ (fitur non-numerik).
 - Terdapat 5 kolom numerik dengan tipe data float64 yaitu: `Trip_Distance`, `Customer_Since_Months`, `Life_Style_Index`, `Customer_Rating`, dan `Var1`.
 - Terdapat 4 kolom numerik dengan tipe data int64, yaitu: `Cancellation_Last_1Month`, `Var2`, `Var3`, dan `Surge_Pricing_Type`. Kolom `Surge_Pricing_Type` merupakan target fitur yang akan digunakan.
-Namun, terdapat juga data yang kossong (missing value) diantaranya pada variabel `Type_of_Cab`, `Customer_Since_Months`, `Life_Style_Index`, `Confidence_Life_Style_Index`, dan `Var1`
+Namun, terdapat juga data yang kossong (_missing value_) diantaranya pada variabel `Type_of_Cab`, `Customer_Since_Months`, `Life_Style_Index`, `Confidence_Life_Style_Index`, dan `Var1`
 
 Berikut penjelasan mengenai variabel yang terdapat pada dataset:
 1. `Trip_ID`: ID yang digunakan untuk perjalanan. 
@@ -90,7 +90,7 @@ Berikut Correlation Matrix:
 ![correlation_matrix](https://user-images.githubusercontent.com/44547435/136665130-7fa801d9-55a1-4811-b76b-15c262157198.png)
 
 ## Data Preparation
-Berdasarkan _Solution statements_, berikut merupakan penjelasan dari tahapan-tahapan dalam melakukan preprocessing data :
+Berdasarkan _Solution statements_, berikut merupakan penjelasan dari tahapan-tahapan dalam melakukan _preprocessing_ data :
 
 -   Mengatasi data yang kosong atau missing value dengan nilai rata-rata dan mode kolom.
 ![missing value](https://user-images.githubusercontent.com/44547435/136665505-0975f191-6f5b-4308-a292-1c77ccc717a8.png)
