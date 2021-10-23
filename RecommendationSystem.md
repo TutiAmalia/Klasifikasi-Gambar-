@@ -2,8 +2,9 @@
 
 ## Domain Proyek
 -   Latar Belakang\
-![Windows Store](https://user-images.githubusercontent.com/44547435/138543829-32f9b7da-2085-46b2-8efe-e3d0226c34c7.jpg)\
-Microsoft Windows Store adalah toko online yang disediakan Microsoft, dan Anda bisa mendapatkan aplikasi gratis dan berbayar dengan sertifikasi keamanan Windows dari Microsoft Store.
+![Microsoft Store](https://user-images.githubusercontent.com/44547435/138543829-32f9b7da-2085-46b2-8efe-e3d0226c34c7.jpg)\
+  Pada konsol smartphone biasa ditemukan aplikasi dari toko aplikasi bawaan smartphone seperti Google Play Store atau App Store, namun untuk mendapatkan aplikasi untuk pengguna PC atau laptop sebenarnya bisa dilakukan dengan mendownload di website-website yang menyediakan berbagai aplikasi PC atau laptop. Namun tentu ada resiko seperti malware atau virus yang bisa ikut serta ketika melakukan pengunduhan dan pemasangan aplikasi tersebut. Keamanan dari aplikasi yang bisa ditemukan melalui mesin pencarian juga perlu dipertanyakan.\
+  Microsoft Store merupakan aplikasi untuk download aplikasi yang bisa didapatkan pertama kali memasang sistem operasi seperti Windows 8, 8.1, dan Windows 10. Aplikasi ini secara resmi diterbitkan oleh Microsoft dan dikhususkan bagi para pengguna sistem operasi dari Microsoft, dimana saat ini angka pengguna Windows menguasai penggunaan OS dibanding OS lain. Tentu saja segi keamanan akan sangat terjamin bila dibandingkan dengan melakukan download aplikasi dari website yang banyak tersebar di mesin pencarian. 
 
 ## Business Understanding
 ### Problem Statements
@@ -16,7 +17,7 @@ Informasi dataset dapat dilihat pada tabel dibawah ini :
 
 | Jenis                   | Keterangan                                                                              |
 | ----------------------- | ---------------------------------------------------------------------------------------|
-| Sumber                  | [Kaggle : Windows Store](https://www.kaggle.com/vishnuvarthanrao/windows-store) |
+| Sumber                  | [Kaggle : Microsoft Store](https://www.kaggle.com/vishnuvarthanrao/windows-store) |
 | Lisensi                 | CC0: Public Domain                                                                      |
 | Kategori                | bisnis, seni dan hiburan, software                                            |
 | Rating Penggunaan       | 10.0 (Gold)                                                                             |
