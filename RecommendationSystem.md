@@ -1,7 +1,9 @@
 # Laporan Proyek Machine Learning - Tuti Amalia
 
 ## Domain Proyek
--   Latar Belakang
+-   Latar Belakang\
+![Windows Store](https://user-images.githubusercontent.com/44547435/138543829-32f9b7da-2085-46b2-8efe-e3d0226c34c7.jpg)\
+Microsoft Windows Store adalah toko online yang disediakan Microsoft, dan Anda bisa mendapatkan aplikasi gratis dan berbayar dengan sertifikasi keamanan Windows dari Microsoft Store.
 
 ## Business Understanding
 ### Problem Statements
