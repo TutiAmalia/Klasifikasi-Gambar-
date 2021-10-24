@@ -96,7 +96,7 @@ Dari kedua modelling yang digunakan terdapat perbedaan urutan rekomendasi pada n
    
 ## Evaluation
 Untuk mengukur kinerja model sistem rekomendasi digunakan metriks Davies Bouldin.\
-    Skor Davies Bouldin didefinisikan sebagai ukuran kesamaan rata-rata dari setiap cluster dengan cluster yang paling mirip, dimana kesamaan adalah rasio jarak dalam cluster dengan jarak antar cluster. Skor dihitung dengan formula [[2](https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation)] :
+    Skor Davies Bouldin didefinisikan sebagai ukuran kesamaan rata-rata dari setiap cluster dengan cluster yang paling mirip, dimana kesamaan adalah rasio jarak dalam cluster dengan jarak antar cluster. Skor dihitung dengan formula [[2](https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation)] : \
 ![davies1](https://user-images.githubusercontent.com/44547435/138578848-85d16184-ae80-40fa-a410-71aee6f73677.png)\
 ![davies2](https://user-images.githubusercontent.com/44547435/138578850-6646b34d-bd55-4a13-8140-bbde49951a9d.png)\
     Kelebihan:\
