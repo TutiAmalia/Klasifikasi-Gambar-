@@ -108,5 +108,5 @@ Untuk mengukur kinerja model sistem rekomendasi digunakan metriks Davies Bouldin
   Hasil skor dari metriks Davies Bouldin yakni ![metrics](https://user-images.githubusercontent.com/44547435/138578942-31c6e6bf-ad93-4ba7-892c-8c939d15fa9f.png)
     
 ## _Referensi:_
-[[1]((https://id.wikipedia.org/wiki/Bursa_Microsoft))] Anonim. Bursa Microsoft. online. https://id.wikipedia.org/wiki/Bursa_Microsoft
+[[1]((https://id.wikipedia.org/wiki/Bursa_Microsoft))] Anonim. Bursa Microsoft. online. https://id.wikipedia.org/wiki/Bursa_Microsoft\
 [[2](https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation)] scikit-learn. (2021). Clustering - Performance Evaluation. https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation
