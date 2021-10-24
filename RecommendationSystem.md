@@ -3,23 +3,22 @@
 ## Domain Proyek
 -   Latar Belakang\
 ![Microsoft Store](https://user-images.githubusercontent.com/44547435/138543829-32f9b7da-2085-46b2-8efe-e3d0226c34c7.jpg)\
-  Pada konsol smartphone biasa ditemukan aplikasi dari toko aplikasi bawaan Smartphone seperti Google Play Store atau App Store, namun untuk mendapatkan aplikasi bagi pengguna PC atau laptop sebenarnya bisa dilakukan dengan mendownload di website-website yang menyediakan berbagai aplikasi PC atau laptop. Namun tentu ada resiko seperti malware atau virus yang bisa ikut serta ketika melakukan pengunduhan dan pemasangan aplikasi tersebut. Keamanan dari aplikasi yang bisa ditemukan melalui mesin pencarian juga perlu dipertanyakan.\
-  Microsoft Store merupakan aplikasi untuk download aplikasi yang bisa didapatkan pertama kali pada sistem operasi seperti Windows 8, 8.1, dan Windows 10 [[1](https://id.wikipedia.org/wiki/Bursa_Microsoft)]. Aplikasi ini secara resmi diterbitkan oleh Microsoft dan dikhususkan bagi para pengguna sistem operasi dari Microsoft, dimana saat ini angka pengguna Windows menguasai penggunaan OS dibanding OS lain. Pada Microsoft Store terdapat berbagai pilihan aplikasi dengan berbagai konten yang menarik. Beberapa konten pada Microsoft store juga tersedia secara gratis dan tentu saja dari segi keamanan akan sangat terjamin bila dibandingkan dengan melakukan download aplikasi dari website yang banyak tersebar di mesin pencarian.
+    Pada konsol smartphone biasa ditemukan aplikasi dari toko aplikasi bawaan Smartphone seperti Google Play Store atau App Store, namun untuk mendapatkan aplikasi bagi pengguna PC atau laptop sebenarnya bisa dilakukan dengan mendownload di website-website yang menyediakan berbagai aplikasi PC atau laptop. Namun tentu ada resiko seperti malware atau virus yang bisa ikut serta ketika melakukan pengunduhan dan pemasangan aplikasi tersebut. Keamanan dari aplikasi yang bisa ditemukan melalui mesin pencarian juga perlu dipertanyakan.\
+    Microsoft Store merupakan aplikasi untuk download aplikasi yang bisa didapatkan pertama kali pada sistem operasi seperti Windows 8, 8.1, dan Windows 10 [[1](https://id.wikipedia.org/wiki/Bursa_Microsoft)]. Aplikasi ini secara resmi diterbitkan oleh Microsoft dan dikhususkan bagi para pengguna sistem operasi dari Microsoft, dimana saat ini angka pengguna Windows menguasai penggunaan OS dibanding OS lain. Pada Microsoft Store terdapat berbagai pilihan aplikasi dengan berbagai konten yang menarik. Beberapa konten pada Microsoft store juga tersedia secara gratis dan tentu saja dari segi keamanan akan sangat terjamin bila dibandingkan dengan melakukan download aplikasi dari website yang banyak tersebar di mesin pencarian.
   Maka dari itu, pada proyek kali ini dibuat sistem rekomendasi pada pengguna Microsoft Store di mana akan direkomendasikan beberapa aplikasi berdasarkan pada pencarian pengguna. 
 
 ## Business Understanding
-### Problem Statements\
+### Problem Statements
   Berikut merupakan rincian masalah yang dapat diselesaikan pada proyek ini:
   - Bagaimana model yang digunakan dapat merekomendasi aplikasi berdasarkan pencarian pengguna?
 ### Goals
   Berikut adalah tujuan dari dibuatnya proyek ini:
-  - Model dapat merekomendasikan aplikasi berdasarkan pencarian pengguna.\
+  - Model dapat merekomendasikan aplikasi berdasarkan pencarian pengguna.
 ### Solution statements
 Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya:
-- Untuk preprocessing data dapat dilakukan dengan beberapa teknik, sebagai berikut:
-  - Memperbaiki tipe data pada setiap kolom.
+- Karena dataset yang digunakan terbilang cukup baik, maka untuk preprocessing data dilakukan beberapa teknik preprocessing, sebagai berikut:
   - Membersihkan data kosong pada kolom.
-  - Memperbaiki nilai pada kolom Price.
+  - Memperbaiki tipe data pada beberapa kolom.
 - Sebelum dataset dimasukkan ke model diperlukan persiapan data atau data preparation di mana terdapat beberapa teknik diantanya:
   - Konversi kolom kategori menjadi one hot encoding
   - Standarisasi kolom numerik dengan StandardScaler
@@ -68,6 +67,30 @@ Kemudian terdapat juga visualisasi data untuk kolom datasetnya :\
 ![rasio harga pada aplikasi](https://user-images.githubusercontent.com/44547435/138562012-5f5181bf-e5fe-40ba-8fbf-03a3a362b40c.png)\
 ![jumlah orang yang menilai](https://user-images.githubusercontent.com/44547435/138562017-f6afee0c-365b-44d0-8da1-1eccba85f8c6.png)\
 
+## Data Preparation
+- Berdasarkan _Solution statements_, berikut merupakan penjelasan dari tahapan-tahapan dalam melakukan _preprocessing_ data :
+  - Membersihkan data kosong atau _missing value_ pada kolom. Pada kolom `Name`, `Rating`, `Category`, `Date`, dan `Price` masing-masing memiliki 1 data yang kosong. Sehingga, untuk mengatasi data null maka dilakukan pembersihan dengan menghapusnya dan tidak banyak informasi yang hilang dari keseluruhan datanya.
+  - Memperbaiki tipe data pada beberapa kolom. Berikut kolom dari dataset yang perlu diperbaiki tipe datanya:
+    - Kolom Rating: mengecek apakah terdapat nilai rating diatas 5.
+    - Kolom Date: mengganti tipe data menjadi _datetime_.
+    - Kolom Price: menghapus simbol '₹', ','. Mengubah nilai 'Free' menjadi '0' serta tipe datanya menjadi 'float64'
+- Berikutnya untuk persiapan data atau data preparation, dilakukan tahapan sebagai berikut:
+  - Konversi label kategori menjadi _one hot encoding_.
+    Label kategori ini diubah dari data kategori menjadi data numerik untuk memudahkan pencarian nilai terdekat pada setiap aplikasi yang akan direkomendasikan. Metode One Hot Encoding merepresentasikan data bertipe kategori sebagai vektor biner yang bernilai integer, 0 dan 1, dimana semua elemen akan bernilai 0 kecuali satu elemen yang bernilai 1, yaitu elemen yang memiliki nilai kategori tersebut. Kemudian label kategori akan disatukan kembali dengan _dataframe_ yang berisi label `Rating`, `No of people rated`, dan `Price`.\
+  - Standarisasi kolom numerik dengan StandardScaler. 
+    Standarisasi adalah proses konversi nilai-nilai dari suatu fitur sehingga nilai-nilai tersebut memiliki skala yang sama. Metode StandardScaler menghilangkan _mean_ (terpusat pada 0) dan menskalakan ke variansi (deviasi standar = 1), dengan asumsi data terdistribusi normal (gauss) untuk semua fitur. 
+
 ## Modelling
+Setelah dilakukan data preparation, selanjutnya membuat model/sistem rekomendasi berdasarkan _content based filtering_.\
+1. Cosine Similarity
+   Menghitung _cosine similairity_ dari setiap dataset menggunakan fungsi [cosine_similarity](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) dari library sklearn. Pada tahapan ini, menghitung _cosine similarity_ pada _dataframe_ dengan membuat fungsi `getRecomendationCosine` untuk pemberian rekomendasi terhadap suatu nama aplikasi. Kemudian, diurutkan hasil perhitungan _cosine similarity_ dari score nilai tertinggi berdasarkan dengan jumlah nama aplikasi yang akan direkomendasikan. Berikut tampilan hasil rekomendasi dengan menggunakan _cosine similarity_:
+   ![cosine](https://user-images.githubusercontent.com/44547435/138577611-527d288b-dad6-48ba-980e-3cd427c31070.png)
+2. K-Nearest Neighbor
+   Model KNN untuk clustering menggunakan fungsi [NearestNeighbor](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html) dari library sklearn dengan parameter metriksnya yakni euclidean. Selanjutnya, dibuat fungsi `getRecomendationKnn` untuk memberikan rekomendasi terhadap suatu nama aplikasi berdasarkan urutan dari hasil nilai pendekatannya. Berikut tampilan hasil rekomendasi dengan menggunakan _Nearest Neighbor_:
+   ![knn](https://user-images.githubusercontent.com/44547435/138578253-512f6514-411f-4a82-8132-141a77b65291.png)
+
+Dari kedua modelling yang digunakan terdapat perbedaan urutan rekomendasi pada nama aplikasi `KakaoTalk` dan `Eden`. 
+   
+## Evaluation
 ## _Referensi:_
 [[1]((https://id.wikipedia.org/wiki/Bursa_Microsoft))] Anonim. Bursa Microsoft. online: https://id.wikipedia.org/wiki/Bursa_Microsoft
