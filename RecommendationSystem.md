@@ -32,7 +32,7 @@ Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya:
   - K-Nearest Neighbor\
       Algoritma ini digunakan untuk kasus _clustering_ pada sistem rekomendasi. Prinsip algoritma ini adalah mencari nilai similarity dan dengan proses perhitungan untuk mendapatkan hasil semirip mungkin dengan hasil pencarian.\
       Kelebihan dari Knn yakni:\
-        - Algoritma mudah digunakan dan sederhana
+        - Algoritma mudah digunakan dan sederhana.\
         - Algortima sangat fleksibel, dapat diimplementasikan pada kasus klasifikasi, regresi, dan pencarian.\
        Kekurangan dari knn yakni:\
         - Algoritma menjadi lebih lambat secara signifikan karena jumlah contoh dan/atau prediktor/variabel yang meningkat.
@@ -84,26 +84,26 @@ Kemudian terdapat juga visualisasi data untuk kolom datasetnya :\
     Standarisasi adalah proses konversi nilai-nilai dari suatu fitur sehingga nilai-nilai tersebut memiliki skala yang sama. Metode StandardScaler menghilangkan _mean_ (terpusat pada 0) dan menskalakan ke variansi (deviasi standar = 1), dengan asumsi data terdistribusi normal (gauss) untuk semua fitur. 
 
 ## Modelling
-Setelah dilakukan data preparation, selanjutnya membuat model/sistem rekomendasi berdasarkan _content based filtering_.
+Setelah dilakukan _data preparation_, selanjutnya membuat model/sistem rekomendasi berdasarkan _content based filtering_.
 1. Cosine Similarity\
    Menghitung _cosine similairity_ dari setiap dataset menggunakan fungsi [cosine_similarity](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) dari library sklearn. Pada tahapan ini, menghitung _cosine similarity_ pada _dataframe_ dengan membuat fungsi `getRecomendationCosine` untuk pemberian rekomendasi terhadap suatu nama aplikasi. Kemudian, diurutkan hasil perhitungan _cosine similarity_ dari score nilai tertinggi berdasarkan dengan jumlah nama aplikasi yang akan direkomendasikan. Berikut tampilan hasil rekomendasi dengan menggunakan _cosine similarity_:
    ![cosine](https://user-images.githubusercontent.com/44547435/138579318-980dd0fd-d252-48f5-a646-ae98b7e3b9dc.png)
 2. K-Nearest Neighbor\
-   Model KNN untuk clustering menggunakan fungsi [NearestNeighbor](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html) dari library sklearn dengan parameter metriksnya yakni euclidean. Selanjutnya, dibuat fungsi `getRecomendationKnn` untuk memberikan rekomendasi terhadap suatu nama aplikasi berdasarkan urutan dari hasil nilai pendekatannya. Berikut tampilan hasil rekomendasi dengan menggunakan _Nearest Neighbor_:
+   Model KNN untuk clustering menggunakan fungsi [NearestNeighbor](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html) dari library sklearn dengan parameter metriksnya yakni euclidean. Selanjutnya, dibuat fungsi `getRecomendationKnn` untuk memberikan rekomendasi terhadap suatu nama aplikasi berdasarkan urutan dari hasil nilai pendekatannya. Berikut tampilan hasil rekomendasi dengan menggunakan _Nearest Neighbor_:\
    ![knn](https://user-images.githubusercontent.com/44547435/138579313-32329fef-0914-4ae6-8e97-132dab946b3f.png)
 
 Dari kedua modelling yang digunakan terdapat perbedaan urutan rekomendasi pada nama aplikasi `KakaoTalk` dan `Eden`. 
    
 ## Evaluation
 Untuk mengukur kinerja model sistem rekomendasi digunakan metriks Davies Bouldin.\
-Skor Davies Bouldin didefinisikan sebagai ukuran kesamaan rata-rata dari setiap cluster dengan cluster yang paling mirip, dimana kesamaan adalah rasio jarak dalam cluster dengan jarak antar cluster. Skor dihitung dengan formula [[2](https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation)] :
+    Skor Davies Bouldin didefinisikan sebagai ukuran kesamaan rata-rata dari setiap cluster dengan cluster yang paling mirip, dimana kesamaan adalah rasio jarak dalam cluster dengan jarak antar cluster. Skor dihitung dengan formula [[2](https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation)] :
 ![davies1](https://user-images.githubusercontent.com/44547435/138578848-85d16184-ae80-40fa-a410-71aee6f73677.png)\
 ![davies2](https://user-images.githubusercontent.com/44547435/138578850-6646b34d-bd55-4a13-8140-bbde49951a9d.png)\
     Kelebihan:\
-    - Komputasi lebih mudah daripada Skor Silhoutte.
+    - Komputasi lebih mudah daripada Skor Silhoutte.\
     - Skor yang dihitung hanya jumlah dan fitur yang melekat pada dataset.\
     Kekurangan:\
-    - Metriks ini hanya baik digunakan pada kasus _convex cluster_.
+    - Metriks ini hanya baik digunakan pada kasus _convex cluster_.\
     - Penggunaan jarak centroid membatasi metriks jarak ke ruang Euclidean.\
   Hasil skor dari metriks Davies Bouldin yakni ![metrics](https://user-images.githubusercontent.com/44547435/138578942-31c6e6bf-ad93-4ba7-892c-8c939d15fa9f.png)
     
