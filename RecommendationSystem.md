@@ -3,9 +3,9 @@
 ## Domain Proyek
 -   Latar Belakang\
 ![Microsoft Store](https://user-images.githubusercontent.com/44547435/138543829-32f9b7da-2085-46b2-8efe-e3d0226c34c7.jpg)\
-    Pada konsol smartphone biasa ditemukan aplikasi dari toko aplikasi bawaan Smartphone seperti Google Play Store atau App Store, namun untuk mendapatkan aplikasi bagi pengguna PC atau laptop sebenarnya bisa dilakukan dengan mendownload di website-website yang menyediakan berbagai aplikasi PC atau laptop. Namun tentu ada resiko seperti _Malware_ atau virus yang bisa ikut serta ketika melakukan pengunduhan dan pemasangan aplikasi tersebut. Keamanan dari aplikasi yang bisa ditemukan melalui mesin pencarian juga perlu dipertanyakan.
+    Pada konsol _smartphone_ biasa ditemukan aplikasi dari toko aplikasi bawaan _smartphone_ seperti Google Play Store atau App Store, namun untuk mendapatkan aplikasi bagi pengguna PC atau laptop sebenarnya bisa dilakukan dengan mengunduh di _website_ yang menyediakan berbagai aplikasi PC atau laptop. Namun tentu ada resiko seperti _Malware_ atau virus yang bisa ikut serta ketika melakukan pengunduhan dan pemasangan aplikasi tersebut. Keamanan dari aplikasi yang bisa ditemukan melalui mesin pencarian juga perlu dipertanyakan.
     
-    Microsoft Store merupakan aplikasi untuk download aplikasi yang bisa didapatkan pertama kali pada sistem operasi seperti Windows 8, 8.1, dan Windows 10 [[1](https://id.wikipedia.org/wiki/Bursa_Microsoft)]. Aplikasi ini secara resmi diterbitkan oleh Microsoft dan dikhususkan bagi para pengguna sistem operasi dari Microsoft, dimana saat ini angka pengguna Windows menguasai penggunaan OS dibanding OS lain. Pada Microsoft Store terdapat berbagai pilihan aplikasi dengan berbagai konten yang menarik. Beberapa konten pada Microsoft store juga tersedia secara gratis dan tentu saja dari segi keamanan akan sangat terjamin bila dibandingkan dengan melakukan download aplikasi dari website yang banyak tersebar di mesin pencarian.
+    Microsoft Store merupakan aplikasi untuk mengunduh aplikasi yang bisa didapatkan pertama kali pada sistem operasi seperti Windows 8, 8.1, dan Windows 10 [[1](https://id.wikipedia.org/wiki/Bursa_Microsoft)]. Aplikasi ini secara resmi diterbitkan oleh Microsoft dan dikhususkan bagi para pengguna sistem operasi dari Microsoft, dimana saat ini angka pengguna Windows menguasai penggunaan OS dibanding OS lain. Pada Microsoft Store terdapat berbagai pilihan aplikasi dengan berbagai konten yang menarik. Beberapa konten pada Microsoft store juga tersedia secara gratis dan tentu saja dari segi keamanan akan sangat terjamin bila dibandingkan dengan melakukan download aplikasi dari website yang banyak tersebar di mesin pencarian.
     
     Maka dari itu, pada proyek kali ini dibuat sistem rekomendasi pada pengguna Microsoft Store dimana akan direkomendasikan beberapa aplikasi berdasarkan pada pencarian pengguna. 
 
@@ -18,23 +18,23 @@
   - Model dapat merekomendasikan aplikasi berdasarkan pencarian pengguna.
 ### Solution statements
 Solusi yang dapat dilakukan untuk memenuhi tujuan dari proyek ini diantaranya:
-- Karena dataset yang digunakan terbilang cukup baik, maka untuk preprocessing data dilakukan beberapa teknik preprocessing, sebagai berikut:
+- Karena dataset yang digunakan terbilang cukup baik, maka untuk _preprocessing_ data dilakukan beberapa teknik _preprocessing_, sebagai berikut:
   - Membersihkan data kosong pada kolom.
   - Memperbaiki tipe data pada beberapa kolom.
-- Sebelum dataset dimasukkan ke model diperlukan persiapan data atau data preparation dimana terdapat beberapa teknik diantanya:
-  - Konversi kolom kategori menjadi _one hot encoding_
-  - Standarisasi kolom numerik dengan _StandardScaler_
+- Sebelum dataset dimasukkan ke model diperlukan persiapan data atau _data preparation_ dimana terdapat beberapa teknik diantaranya:
+  - Konversi kolom kategori dengan metode _One Hot Encoding_
+  - Standarisasi kolom numerik dengan metode _StandardScaler_
 - Kemudian, setelah data telah dipersiapkan maka selanjutnya dimasukkan ke dalam model sistem rekomendasi berdasarkan _Content Based Filtering_. Alasannya karena menyesuaikan pada dataset yang digunakan. Beberapa algoritma/model yang digunakan untuk membuat sistem rekomendasi pada proyek kali ini yakni:
   - Cosine Similarity\
-      Cosine similarity untuk mengukur kesamaan antara dua vektor dan menentukan apakah kedua vektor tersebut menunjuk ke arah yang sama, dengan menghitung sudut cosinus anatara dua vektor. Semakin kecil sudut cosinus, semakin besar nilai cosine similarity.\
+      Cosine similarity untuk mengukur kesamaan antara dua vektor dan menentukan apakah kedua vektor tersebut menunjuk ke arah yang sama, dengan menghitung sudut _cosinus_ antara dua vektor. Semakin kecil sudut _cosinus_, semakin besar nilai _cosine similarity_.\
       ![Rumus cosine similarity](https://user-images.githubusercontent.com/44547435/138561226-b298627a-1f9e-4555-8e9e-96c352927344.jpeg)\
-      Cosine similarity menghitung kesamaan sebagai dot product yang dinormalisasi dari masukan sampel X dan Y. Sehingga, penggunaan cosine similarity ini untuk mengukur kesamaan nama aplikasi dan kategori aplikasi pada Microsoft Store.
+      Cosine similarity menghitung kesamaan sebagai _dot product_ yang dinormalisasi dari masukan sampel x dan y. Sehingga, penggunaan _cosine similarity_ ini untuk mengukur kesamaan nama aplikasi dan kategori aplikasi pada Microsoft Store.
   - K-Nearest Neighbor\
-      Algoritma ini digunakan untuk kasus _clustering_ pada sistem rekomendasi. Prinsip algoritma ini adalah mencari nilai similarity dan dengan proses perhitungan untuk mendapatkan hasil semirip mungkin dengan hasil pencarian.\
-      Kelebihan dari Knn yakni:\
+      Algoritma ini digunakan untuk kasus _clustering_ pada sistem rekomendasi. Prinsip algoritma ini adalah mencari nilai _similarity_ dan dengan proses perhitungan untuk mendapatkan hasil semirip mungkin dengan hasil pencarian.\
+      Kelebihan dari KNN yakni:\
         - Algoritma mudah digunakan dan sederhana.\
         - Algortima sangat fleksibel, dapat diimplementasikan pada kasus klasifikasi, regresi, dan pencarian.\
-       Kekurangan dari knn yakni:\
+       Kekurangan dari KNN yakni:\
         - Algoritma menjadi lebih lambat secara signifikan karena jumlah contoh dan/atau prediktor/variabel yang meningkat.
 
 ## Data Understanding
@@ -49,11 +49,11 @@ Informasi dataset dapat dilihat pada tabel dibawah ini :
 | Rating Penggunaan       | 10.0 (Gold)                                                                             |
 | Jenis dan Ukuran Berkas | CSV (300 kB)                                                                          |
 
-msft.csv merupakan dataset yang digunakan pada proses rekomendasi aplikasi untuk pengguna Microsoft Store. Dataset ini berisi 5322 baris dan 6 kolom di mana tiap kolom memuat informasi tipe data yakni: 
-- Terdapat 4 kolom dengan tipe object, yaitu: `Name` , `Category`, `Date`, dan `Price` (fitur non-numerik).
-- Terdapat 1 kolom numerik dengan tipe data float64 yaitu: `Rating`
-- Terdapat 1 kolom numerik dengan tipe data int64, yaitu: `No of people Rated`
-Namun, terdapat juga data yang kossong (_missing value_) diantaranya pada variabel `Name`, `Rating`, `Category`, `Date`, dan `Price`.\
+msft.csv merupakan dataset yang digunakan pada proses rekomendasi aplikasi untuk pengguna Microsoft Store. Dataset ini berisi 5322 baris dan 6 kolom dimana tiap kolom memuat informasi tipe data yakni: 
+- Terdapat 4 kolom dengan tipe data `object`, yaitu: `Name` , `Category`, `Date`, dan `Price` (fitur non-numerik).
+- Terdapat 1 kolom numerik dengan tipe data `float64` yaitu: `Rating`
+- Terdapat 1 kolom numerik dengan tipe data `int64`, yaitu: `No of people Rated`
+Namun, terdapat juga data yang kosong (_missing value_) diantaranya pada variabel `Name`, `Rating`, `Category`, `Date`, dan `Price`.\
 
 Berikut penjelasan mengenai variabel yang terdapat pada dataset:
 1. `Name`: Nama pada aplikasi di Microsoft Store.
@@ -78,18 +78,18 @@ Kemudian terdapat juga visualisasi data untuk kolom datasetnya :\
     - Kolom Date: mengganti tipe data menjadi _datetime_.
     - Kolom Price: menghapus simbol '₹', ','. Mengubah nilai 'Free' menjadi '0' serta tipe datanya menjadi 'float64'
 - Berikutnya untuk persiapan data atau _data preparation_, dilakukan tahapan sebagai berikut:
-  - Konversi label kategori menjadi _one hot encoding_.\
+  - Konversi label kategori dengan metode _One Hot Encoding_.\
     Label kategori ini diubah dari data kategori menjadi data numerik untuk memudahkan pencarian nilai terdekat pada setiap aplikasi yang akan direkomendasikan. Metode _one hot encoding_ merepresentasikan data bertipe kategori sebagai vektor biner yang bernilai integer, 0 dan 1, dimana semua elemen akan bernilai 0 kecuali satu elemen yang bernilai 1, yaitu elemen yang memiliki nilai kategori tersebut. Kemudian label kategori akan disatukan kembali dengan _dataframe_ yang berisi label `Rating`, `No of people rated`, dan `Price`.
-  - Standarisasi kolom numerik dengan StandardScaler.\
+  - Standarisasi kolom numerik dengan metode StandardScaler.\
     Standarisasi adalah proses konversi nilai-nilai dari suatu fitur sehingga nilai-nilai tersebut memiliki skala yang sama. Metode StandardScaler menghilangkan _mean_ (terpusat pada 0) dan menskalakan ke variansi (deviasi standar = 1), dengan asumsi data terdistribusi normal (gauss) untuk semua fitur. 
 
 ## Modelling
-Setelah dilakukan _data preparation_, selanjutnya membuat model/sistem rekomendasi berdasarkan _content based filtering_.
+Setelah dilakukan _data preparation_, selanjutnya membuat model/sistem rekomendasi berdasarkan _Content based filtering_.
 1. Cosine Similarity\
-   Menghitung _cosine similairity_ dari setiap dataset menggunakan fungsi [cosine_similarity](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) dari library sklearn. Pada tahapan ini, menghitung _cosine similarity_ pada _dataframe_ dengan membuat fungsi `getRecomendationCosine` untuk pemberian rekomendasi terhadap suatu nama aplikasi. Kemudian, diurutkan hasil perhitungan _cosine similarity_ dari score nilai tertinggi berdasarkan dengan jumlah nama aplikasi yang akan direkomendasikan. Berikut tampilan hasil rekomendasi dengan menggunakan _cosine similarity_:
+   Menghitung _cosine similairity_ dari setiap dataset menggunakan fungsi [cosine_similarity](https://scikit-learn.org/stable/modules/generated/sklearn.metrics.pairwise.cosine_similarity.html) dari library Sklearn. Pada tahapan ini, menghitung _cosine similarity_ pada _dataframe_ dengan membuat fungsi `getRecomendationCosine` untuk pemberian rekomendasi terhadap suatu nama aplikasi. Kemudian, diurutkan hasil perhitungan _cosine similarity_ dari score nilai tertinggi berdasarkan dengan jumlah nama aplikasi yang akan direkomendasikan. Berikut tampilan hasil rekomendasi dengan menggunakan _cosine similarity_:
    ![cosine](https://user-images.githubusercontent.com/44547435/138579318-980dd0fd-d252-48f5-a646-ae98b7e3b9dc.png)
 2. K-Nearest Neighbor\
-   Model KNN untuk clustering menggunakan fungsi [NearestNeighbor](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html) dari library sklearn dengan parameter metriksnya yakni euclidean. Selanjutnya, dibuat fungsi `getRecomendationKnn` untuk memberikan rekomendasi terhadap suatu nama aplikasi berdasarkan urutan dari hasil nilai pendekatannya. Berikut tampilan hasil rekomendasi dengan menggunakan _Nearest Neighbor_:\
+   Model KNN untuk _clustering_ menggunakan fungsi [NearestNeighbor](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html) dari library Sklearn dengan parameter metriksnya yakni euclidean. Selanjutnya, dibuat fungsi `getRecomendationKnn` untuk memberikan rekomendasi terhadap suatu nama aplikasi berdasarkan urutan dari hasil nilai pendekatannya. Berikut tampilan hasil rekomendasi dengan menggunakan _Nearest Neighbor_:\
    ![knn](https://user-images.githubusercontent.com/44547435/138579313-32329fef-0914-4ae6-8e97-132dab946b3f.png)
 
 Dari kedua modelling yang digunakan terdapat perbedaan urutan rekomendasi pada nama aplikasi `KakaoTalk` dan `Eden`. 
@@ -104,7 +104,7 @@ Untuk mengukur kinerja model sistem rekomendasi digunakan metriks Davies Bouldin
     - Skor yang dihitung hanya jumlah dan fitur yang melekat pada dataset.\
     Kekurangan:\
     - Metriks ini hanya baik digunakan pada kasus _convex cluster_.\
-    - Penggunaan jarak centroid membatasi metriks jarak ke ruang Euclidean.\
+    - Penggunaan jarak _centroid_ membatasi metriks jarak ke ruang Euclidean.\
   Hasil skor dari metriks Davies Bouldin yakni ![metrics](https://user-images.githubusercontent.com/44547435/138578942-31c6e6bf-ad93-4ba7-892c-8c939d15fa9f.png)
     
 ## _Referensi:_
