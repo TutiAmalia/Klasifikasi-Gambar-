@@ -127,5 +127,5 @@ Dari kedua modelling yang digunakan terdapat perbedaan hasil rekomendasi untuk p
     
 ## _Referensi:_
 [[1]((https://id.wikipedia.org/wiki/Bursa_Microsoft))] Anonim. Bursa Microsoft. online. https://id.wikipedia.org/wiki/Bursa_Microsoft \
-[[2](https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation)] Scikit-learn. (2021). Clustering - Performance Evaluation. https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation
+[[2](https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation)] Scikit-learn. (2021). Clustering - Performance Evaluation. https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation \
 [[3](https://chaitanyabelhekar.medium.com/recommender-system-metrics-clearly-explained-1f2ba6690216)] Belhekar Chaitanya. 2020. Recommender System Metrics — Clearly Explained. https://chaitanyabelhekar.medium.com/recommender-system-metrics-clearly-explained-1f2ba6690216
