@@ -109,7 +109,7 @@ Dari kedua modelling yang digunakan terdapat perbedaan hasil rekomendasi untuk p
 ![davies2](https://user-images.githubusercontent.com/44547435/138578850-6646b34d-bd55-4a13-8140-bbde49951a9d.png)\
     Kelebihan:
     - Komputasi lebih mudah daripada Skor Silhoutte.
-    - Skor yang dihitung hanya jumlah dan fitur yang melekat pada dataset.
+    - Skor yang dihitung hanya jumlah dan fitur yang melekat pada dataset. \
     Kekurangan:
     - Metriks ini hanya baik digunakan pada kasus _convex cluster_.
     - Penggunaan jarak _centroid_ membatasi metriks jarak ke ruang Euclidean.\
@@ -123,7 +123,7 @@ Dari kedua modelling yang digunakan terdapat perbedaan hasil rekomendasi untuk p
      ![prec_knn](https://user-images.githubusercontent.com/44547435/139037377-f071eb63-2e2f-4e5e-9ce8-eaa9d1efdd3c.png) 
    - Cosine Similarity: \
      ![prec_cos](https://user-images.githubusercontent.com/44547435/139037372-dbd47fdd-897c-49d7-9374-54f2af7a565c.png) \
-   Berdasarkan hasil evaluasi sistem rekomendasi aplikasi untuk pengguna di Microsoft Store dengan metriks precision pada metode Knn memiliki nilai 0.99 dan cosine similarity memiliki nilai 1.0. Namun, kedua model ini memiliki hasil rekomendasi yang berbeda.
+   Berdasarkan hasil evaluasi sistem rekomendasi aplikasi untuk pengguna di Microsoft Store dengan metriks precision pada metode Knn memiliki nilai 0.99 dan cosine similarity memiliki nilai 1.0.
     
 ## _Referensi:_
 [[1]((https://id.wikipedia.org/wiki/Bursa_Microsoft))] Anonim. Bursa Microsoft. online. https://id.wikipedia.org/wiki/Bursa_Microsoft \
