@@ -116,7 +116,7 @@ Dari kedua modelling yang digunakan terdapat perbedaan hasil rekomendasi untuk p
   Hasil skor dari metriks Davies Bouldin yakni ![metrics](https://user-images.githubusercontent.com/44547435/139035597-5c66a21e-b1b9-44ee-b735-a9f31fba0d23.png) \
   Berdasarkan hasil diatas menandakan modelnya sudah memiliki separasi kluster yang cukup baik.
  - Berdasarkan metriks Precision. \
-   Precision menggambarkan tingkat keakuratan antara data yang diminta dengan jumlah item rekomendasi yang relevan dari model yang digunakan. Maka, untuk menghitung tingkat akurasi model berdasarkan jumlah prediksi benar dibagi dengan jumlah keseluruhan prediksi. Untuk rumusnya digunakan: \
+   Precision menggambarkan tingkat keakuratan antara data yang diminta dengan jumlah item rekomendasi yang relevan dari model yang digunakan. Maka, untuk menghitung tingkat akurasi model berdasarkan jumlah prediksi benar dibagi dengan jumlah keseluruhan prediksi. Untuk rumusnya digunakan [3](https://chaitanyabelhekar.medium.com/recommender-system-metrics-clearly-explained-1f2ba6690216) : \
    ![precision](https://user-images.githubusercontent.com/44547435/139037109-11d88c1a-c60e-4921-b124-294e840a01a3.png) \
    Hasil dari masing-masing model yakni: 
    - K-Nearest Neighbor: \
@@ -127,4 +127,5 @@ Dari kedua modelling yang digunakan terdapat perbedaan hasil rekomendasi untuk p
     
 ## _Referensi:_
 [[1]((https://id.wikipedia.org/wiki/Bursa_Microsoft))] Anonim. Bursa Microsoft. online. https://id.wikipedia.org/wiki/Bursa_Microsoft \
-[[2](https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation)] scikit-learn. (2021). Clustering - Performance Evaluation. https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation
+[[2](https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation)] Scikit-learn. (2021). Clustering - Performance Evaluation. https://scikit-learn.org/stable/modules/clustering.html#clustering-performance-evaluation
+[[3](https://chaitanyabelhekar.medium.com/recommender-system-metrics-clearly-explained-1f2ba6690216)] Belhekar Chaitanya. 2020. Recommender System Metrics — Clearly Explained. https://chaitanyabelhekar.medium.com/recommender-system-metrics-clearly-explained-1f2ba6690216
