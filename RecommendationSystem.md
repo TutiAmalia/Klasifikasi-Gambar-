@@ -118,9 +118,9 @@ Dari kedua modelling yang digunakan terdapat perbedaan hasil rekomendasi untuk p
  - Berdasarkan metriks Precision. \
    Precision menggambarkan tingkat keakuratan antara data yang diminta dengan jumlah item rekomendasi yang relevan dari model yang digunakan. Maka, untuk menghitung tingkat akurasi model berdasarkan jumlah prediksi benar dibagi dengan jumlah keseluruhan prediksi. Untuk rumusnya digunakan: \
    ![precision](https://user-images.githubusercontent.com/44547435/139037109-11d88c1a-c60e-4921-b124-294e840a01a3.png) \
-   Hasil dari masing-masing model yakni:
-   - K-Nearest Neighbor: \ 
-     ![prec_knn](https://user-images.githubusercontent.com/44547435/139037377-f071eb63-2e2f-4e5e-9ce8-eaa9d1efdd3c.png) \
+   Hasil dari masing-masing model yakni: 
+   - K-Nearest Neighbor: \
+     ![prec_knn](https://user-images.githubusercontent.com/44547435/139037377-f071eb63-2e2f-4e5e-9ce8-eaa9d1efdd3c.png) 
    - Cosine Similarity: \
      ![prec_cos](https://user-images.githubusercontent.com/44547435/139037372-dbd47fdd-897c-49d7-9374-54f2af7a565c.png) \
    Berdasarkan hasil evaluasi sistem rekomendasi aplikasi untuk pengguna di Microsoft Store dengan metriks precision pada metode Knn memiliki nilai 0.99 dan cosine similarity memiliki nilai 1.0. Namun, kedua model ini memiliki hasil rekomendasi yang berbeda.
